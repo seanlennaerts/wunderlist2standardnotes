@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fc678b44b2ec0979cc3c7fd0fbcce8ee",
+    "revision": "5a4c489fb3188c7a43963cfc2465c4d3",
     "url": "/wunderlist2standardnotes/index.html"
   },
   {
