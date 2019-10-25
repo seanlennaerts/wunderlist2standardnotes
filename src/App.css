@@ -1,22 +1,71 @@
-.App {
-  text-align: center;
+.header {
+  padding: 0 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
+.tasks {
+  border: solid 1px rgb(199, 199, 199);
+  border-radius: 3px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+ul > li {
+  list-style-type: square;
+}
+
+.body {
+   padding: 0 2rem 4rem 2rem;
+}
+
+.export {
+  position: fixed;
+  bottom: 0;
+  background-color: #0078d7;
   color: white;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  font-weight: 500;
+
 }
 
-.App-link {
-  color: #09d3ac;
+.listTitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.error {
+  padding: 1rem;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 3px;
+}
+
+img {
+  height: 20rem;
+  border: 1px solid gray;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+}
+
+.previewPane {
+  flex: 1;
+  margin-left: 2rem;
+}
+
+.instructionWrapper {
+  flex: 1;
+  position: sticky;
+  top: 0;
+}
+
+.instructions {
+  background-color: rgb(247, 247, 247);
+  border-radius: 3px;
+  height: calc(100vh - 16rem);
+  overflow-y: scroll;
 }
