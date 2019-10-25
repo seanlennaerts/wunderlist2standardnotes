@@ -177,7 +177,7 @@ class App extends Component {
               <img src="/wunderlist2standardnotes/3.png" />
             </li>
             <li>
-              <p>Wait for the email to arrive (should take a few minutes). When you get the email follow the link to download you wunderlist .zip file</p>
+              <p>Wait for the email to arrive (should take a few minutes). When you get the email follow the link to download your Wunderlist .zip file</p>
             </li>
             <li>
               <p>Upload the .zip file here:</p>
@@ -194,7 +194,7 @@ class App extends Component {
               <img src="/wunderlist2standardnotes/4.png" />
             </li>
             <li>
-              <p>That should be it! Let me know if anything breaks</p>
+              <p>Select the sn-import-file.txt file that just downloaded. That should be it! Let me know if anything breaks</p>
             </li>
           </ol>
         </div>
