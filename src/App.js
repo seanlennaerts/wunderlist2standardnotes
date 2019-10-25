@@ -166,15 +166,15 @@ class App extends Component {
             </li>
             <li>
               <p>Click on your name and then <b>Account Settings</b></p>
-              <img src="/1.png" />
+              <img src="/wunderlist2standardnotes/1.png" />
             </li>
             <li>
               <p>In the <b>Account</b> tab click <b>Create Export</b></p>
-              <img src="/2.png" />
+              <img src="/wunderlist2standardnotes/2.png" />
             </li>
             <li>
               <p>Enter your email address so they can send you your Wunderlist data</p>
-              <img src="/3.png" />
+              <img src="/wunderlist2standardnotes/3.png" />
             </li>
             <li>
               <p>Wait for the email to arrive (should take a few minutes). When you get the email follow the link to download you wunderlist .zip file</p>
@@ -191,7 +191,7 @@ class App extends Component {
             </li>
             <li>
               <p>Now in Standard Notes, go to <b>Account</b> and click on <b>Import Backup</b></p>
-              <img src="/4.png" />
+              <img src="/wunderlist2standardnotes/4.png" />
             </li>
             <li>
               <p>That should be it! Let me know if anything breaks</p>
