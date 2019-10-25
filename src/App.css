@@ -1,14 +1,18 @@
-.header {
-  padding: 0 2rem;
-}
-
-.tasks {
-  border: solid 1px rgb(199, 199, 199);
-  border-radius: 3px;
+ul {
+  margin-block-start: 0;
 }
 
 ul > li {
   list-style-type: square;
+}
+
+img {
+  height: 20rem;
+  border: 1px solid gray;
+}
+
+.header {
+  padding: 0 2rem;
 }
 
 .body {
@@ -34,11 +38,6 @@ ul > li {
   opacity: 0.9;
 }
 
-.listTitle {
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
 .error {
   padding: 1rem;
   background-color: #f8d7da;
@@ -47,22 +46,12 @@ ul > li {
   border-radius: 3px;
 }
 
-img {
-  height: 20rem;
-  border: 1px solid gray;
-}
-
 .columns {
   display: flex;
   flex-direction: row;
 }
 
-.previewPane {
-  flex: 1;
-  margin-left: 2rem;
-}
-
-.instructionWrapper {
+.instructionPane {
   flex: 1;
   position: sticky;
   top: 0;
@@ -73,4 +62,19 @@ img {
   border-radius: 3px;
   height: calc(100vh - 16rem);
   overflow-y: scroll;
+}
+
+.previewPane {
+  flex: 1;
+  margin-left: 2rem;
+}
+
+.lists {
+  border: solid 1px rgb(199, 199, 199);
+  border-radius: 3px;
+}
+
+.listTitle {
+  font-size: 1.2rem;
+  font-weight: 500;
 }

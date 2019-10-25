@@ -12,13 +12,13 @@ class App extends Component {
     this.unzip = this.unzip.bind(this);
     this.fileInput = React.createRef();
 
-    this.state = { lists: [], titles: [], error: false };
+    this.state = { lists: [], selected: [], error: '' };
   }
 
   export() {
     let sn = { items: [] };
     for (let i = 0; i < this.state.lists.length; i++) {
-      if (this.state.titles[i]) {
+      if (this.state.selected[i]) {
         let list = this.state.lists[i];
         // start building standard notes json
         sn.items.push(
@@ -62,40 +62,39 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ lists: [], titles: [], error: false });
-    if (this.fileInput.current.files[0]) {
-      this.unzip(this.fileInput.current.files[0]);
-    }
+    this.setState({ lists: [], selected: [], error: '' });
+    this.unzip(this.fileInput.current.files[0])
+      .then(o => this.setState(o))
+      .catch(e => this.setState({error: e}));
   }
 
   handleCheck(event) {
-    let titles = this.state.titles;
-    titles[parseInt(event.target.name)] = !titles[parseInt(event.target.name)];
-    this.setState({ titles });
+    let selected = this.state.selected;
+    selected[parseInt(event.target.name)] = !selected[parseInt(event.target.name)];
+    this.setState({ selected });
   }
 
   unzip(file) {
-    JSZip.loadAsync(file)
-      .then(zip => {
-        if (!zip.files['Tasks.json']) {
-          this.setState({
-            error: true
-          })
-          return;
-        }
-        zip
-          .file('Tasks.json')
-          .async('string')
-          .then(data => {
-            let lists = JSON.parse(data.trim());
-            let titles = [];
-            for (let i = 0; i < lists.length; i++) {
-              titles.push(true);
-            }
-            this.setState({ lists, titles });
-
-          });
-      });
+    return new Promise((resolve, reject) => {
+      JSZip.loadAsync(file)
+        .then(zip => {
+          if (!zip.files['Tasks.json']) {
+            reject(`Couldn't use this file :(`);
+            return;
+          }
+          zip
+            .file('Tasks.json')
+            .async('string')
+            .then(data => {
+              let lists = JSON.parse(data.trim());
+              let selected = [];
+              for (let i = 0; i < lists.length; i++) {
+                selected.push(true);
+              }
+              resolve({lists, selected});
+            });
+        });
+    });
   }
 
   showLists() {
@@ -103,20 +102,11 @@ class App extends Component {
       <div className="previewPane">
         <h3>Found the following lists:</h3>
         <p>Unselect any lists you don't want to export.</p>
-        <div className="tasks">
+        <div className="lists">
           {this.buildLists()}
         </div>
       </div>
-
-    )
-  }
-
-  count() {
-    let count = 0;
-    for (let t of this.state.titles) {
-      if (t) count++
-    }
-    return count;
+    );
   }
 
   buildLists() {
@@ -124,9 +114,9 @@ class App extends Component {
     for (let i = 0; i < this.state.lists.length; i++) {
       let list = this.state.lists[i];
       listDivs.push(
-        <div>
+        <div key={i}>
           <div className="listTitle">
-            <input type="checkbox" name={i} checked={this.state.titles[i]} onChange={this.handleCheck} />
+            <input type="checkbox" name={i} checked={this.state.selected[i]} onChange={this.handleCheck} />
             {list.title}
           </div>
           <ul>
@@ -144,18 +134,18 @@ class App extends Component {
     let filteredTasks = tasks.filter(task => !task.completed);
     for (let i = 0; i < limit && i < filteredTasks.length; i++) {
       taskDivs.push(
-        <li>{tasks[i].title}</li>
+        <li key={i}>{tasks[i].title}</li>
       );
     }
     if (filteredTasks.length > limit) {
-      taskDivs.push(<li>{`...${filteredTasks.length - limit} more`}</li>)
+      taskDivs.push(<li key='more'>{`...${filteredTasks.length - limit} more`}</li>)
     }
     return taskDivs;
   }
 
   showInstructions() {
     return (
-      <div className="instructionWrapper">
+      <div className="instructionPane">
         <h3>Instructions</h3>
         <div className="instructions">
           <ol>
@@ -164,15 +154,15 @@ class App extends Component {
             </li>
             <li>
               <p>Click on your name and then <b>Account Settings</b></p>
-              <img src="/wunderlist2standardnotes/1.png" />
+              <img src="/wunderlist2standardnotes/1.png" alt="screenshot of instruction" />
             </li>
             <li>
               <p>In the <b>Account</b> tab click <b>Create Export</b></p>
-              <img src="/wunderlist2standardnotes/2.png" />
+              <img src="/wunderlist2standardnotes/2.png" alt="screenshot of instruction" />
             </li>
             <li>
               <p>Enter your email address so they can send you your Wunderlist data</p>
-              <img src="/wunderlist2standardnotes/3.png" />
+              <img src="/wunderlist2standardnotes/3.png" alt="screenshot of instruction" />
             </li>
             <li>
               <p>Wait for the email to arrive (should take a few minutes). When you get the email follow the link to download your Wunderlist .zip file</p>
@@ -189,7 +179,7 @@ class App extends Component {
             </li>
             <li>
               <p>Now in Standard Notes, go to <b>Account</b> and click on <b>Import Backup</b></p>
-              <img src="/wunderlist2standardnotes/4.png" />
+              <img src="/wunderlist2standardnotes/4.png" alt="screenshot of instruction" />
             </li>
             <li>
               <p>Select the sn-import-file.txt file that just downloaded. That should be it! Let me know if anything breaks</p>
@@ -197,20 +187,18 @@ class App extends Component {
           </ol>
         </div>
       </div>
-
-
     );
   }
 
   showExport() {
     return (
-      <div className="export" onClick={this.export}>{`Export ${this.count()} lists`}</div>
+      <div className="export" onClick={this.export}>{`Export ${this.state.selected.filter(title => title).length} lists`}</div>
     );
   }
 
   showError() {
     return (
-      <div className="error">Couldn't use that file :(</div>
+      <div className="error">{this.state.error}</div>
     )
   }
 
@@ -221,13 +209,13 @@ class App extends Component {
           <h1>Wunderlist <span role="img" aria-label="right arrow">➡️</span> Standard Notes</h1>
         </div>
         <div className="body">
-          {this.state.error ? this.showError() : null}
+          {this.state.error.length > 0 ? this.showError() : null}
           <div className="columns">
             {this.showInstructions()}
             {this.state.lists.length > 0 ? this.showLists() : null}
           </div>
         </div>
-        {this.count() > 0 ? this.showExport() : null}
+        {this.state.selected.filter(title => title).length > 0 ? this.showExport() : null}
       </div>
     );
   }
