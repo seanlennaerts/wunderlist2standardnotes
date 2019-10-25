@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/wunderlist2standardnotes/static/css/main.4c27656d.chunk.css",
+    "main.css": "/wunderlist2standardnotes/static/css/main.3a70d253.chunk.css",
     "main.js": "/wunderlist2standardnotes/static/js/main.903d253b.chunk.js",
     "main.js.map": "/wunderlist2standardnotes/static/js/main.903d253b.chunk.js.map",
     "runtime-main.js": "/wunderlist2standardnotes/static/js/runtime-main.917c47aa.js",
@@ -8,14 +8,14 @@
     "static/js/2.d2817f5b.chunk.js": "/wunderlist2standardnotes/static/js/2.d2817f5b.chunk.js",
     "static/js/2.d2817f5b.chunk.js.map": "/wunderlist2standardnotes/static/js/2.d2817f5b.chunk.js.map",
     "index.html": "/wunderlist2standardnotes/index.html",
-    "precache-manifest.65636aec54f18ddb88f24738b74755c6.js": "/wunderlist2standardnotes/precache-manifest.65636aec54f18ddb88f24738b74755c6.js",
+    "precache-manifest.552e69c225eb2f8f844920bf58e89269.js": "/wunderlist2standardnotes/precache-manifest.552e69c225eb2f8f844920bf58e89269.js",
     "service-worker.js": "/wunderlist2standardnotes/service-worker.js",
-    "static/css/main.4c27656d.chunk.css.map": "/wunderlist2standardnotes/static/css/main.4c27656d.chunk.css.map"
+    "static/css/main.3a70d253.chunk.css.map": "/wunderlist2standardnotes/static/css/main.3a70d253.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.917c47aa.js",
     "static/js/2.d2817f5b.chunk.js",
-    "static/css/main.4c27656d.chunk.css",
+    "static/css/main.3a70d253.chunk.css",
     "static/js/main.903d253b.chunk.js"
   ]
 }
