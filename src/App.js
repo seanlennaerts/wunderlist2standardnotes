@@ -21,7 +21,6 @@ class App extends Component {
       if (this.state.titles[i]) {
         let list = this.state.lists[i];
         // start building standard notes json
-        console.log('starting new list')
         sn.items.push(
           {
             created_at: new Date(list.createdAt),
@@ -45,7 +44,6 @@ class App extends Component {
     for (let task of tasks) {
       let d = new Date(task.createdAt)
       if (d > latest) {
-        console.log(`found more recent date: ${d}`)
         latest = d;
       }
     }
@@ -184,7 +182,7 @@ class App extends Component {
               <input type="file" accept=".zip" ref={this.fileInput} onChange={this.handleSubmit} />
             </li>
             <li>
-              <p>Preview the lists to the right and unselect and of the lists you don't want to migrate</p>
+              <p>Preview the lists to the right and unselect any of the lists you don't want to migrate</p>
             </li>
             <li>
               <p>Click on the blue <b>Export</b> button below. This should download a .txt file</p>
