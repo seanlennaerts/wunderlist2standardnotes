@@ -209,13 +209,13 @@ class App extends Component {
           <h1>Wunderlist <span role="img" aria-label="right arrow">➡️</span> Standard Notes</h1>
         </div>
         <div className="body">
-          {this.state.error.length > 0 ? this.showError() : null}
+          {this.state.error.length > 0 && this.showError()}
           <div className="columns">
             {this.showInstructions()}
-            {this.state.lists.length > 0 ? this.showLists() : null}
+            {this.state.lists.length > 0 && this.showLists()}
           </div>
         </div>
-        {this.state.selected.filter(title => title).length > 0 ? this.showExport() : null}
+        {this.state.selected.filter(title => title).length > 0 && this.showExport()}
       </div>
     );
   }
