@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b1ac59f2c502e95ef4714d9e18cc7fc0",
+    "revision": "7353c69d294c1b9c8f9caabb34854c79",
     "url": "/wunderlist2standardnotes/index.html"
   },
   {
-    "revision": "7ee64fbeaffb87193928",
+    "revision": "111cc923526c9f2c48b1",
     "url": "/wunderlist2standardnotes/static/css/main.3a70d253.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wunderlist2standardnotes/static/js/2.d2817f5b.chunk.js"
   },
   {
-    "revision": "7ee64fbeaffb87193928",
-    "url": "/wunderlist2standardnotes/static/js/main.903d253b.chunk.js"
+    "revision": "111cc923526c9f2c48b1",
+    "url": "/wunderlist2standardnotes/static/js/main.5b349e34.chunk.js"
   },
   {
     "revision": "ae6b040d645917aa83e7",
