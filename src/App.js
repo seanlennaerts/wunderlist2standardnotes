@@ -150,15 +150,7 @@ class App extends Component {
         <div className="instructions">
           <ol>
             <li>
-              <p>Go to <a href="https://www.wunderlist.com" target="_blank" rel="noopener noreferrer">wunderlist.com</a></p>
-            </li>
-            <li>
-              <p>Click on your name and then <b>Account Settings</b></p>
-              <img src="/wunderlist2standardnotes/1.png" alt="screenshot of instruction" />
-            </li>
-            <li>
-              <p>In the <b>Account</b> tab click <b>Create Export</b></p>
-              <img src="/wunderlist2standardnotes/2.png" alt="screenshot of instruction" />
+              <p>Go to <a href="https://export.wunderlist.com/" target="_blank" rel="noopener noreferrer">https://export.wunderlist.com/</a></p>
             </li>
             <li>
               <p>Enter your email address so they can send you your Wunderlist data</p>
@@ -182,7 +174,7 @@ class App extends Component {
               <img src="/wunderlist2standardnotes/4.png" alt="screenshot of instruction" />
             </li>
             <li>
-              <p>Select the sn-import-file.txt file that just downloaded. That should be it! Let me know if anything breaks</p>
+              <p>Select the <b>sn-import-file.txt</b> file that just downloaded. That should be it! Let me know if anything breaks</p>
             </li>
           </ol>
         </div>
