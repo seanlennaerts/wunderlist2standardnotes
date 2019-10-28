@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/wunderlist2standardnotes/static/css/main.a1264b33.chunk.css",
-    "main.js": "/wunderlist2standardnotes/static/js/main.467a7ca7.chunk.js",
-    "main.js.map": "/wunderlist2standardnotes/static/js/main.467a7ca7.chunk.js.map",
+    "main.js": "/wunderlist2standardnotes/static/js/main.9685ffb8.chunk.js",
+    "main.js.map": "/wunderlist2standardnotes/static/js/main.9685ffb8.chunk.js.map",
     "runtime-main.js": "/wunderlist2standardnotes/static/js/runtime-main.917c47aa.js",
     "runtime-main.js.map": "/wunderlist2standardnotes/static/js/runtime-main.917c47aa.js.map",
     "static/js/2.d2817f5b.chunk.js": "/wunderlist2standardnotes/static/js/2.d2817f5b.chunk.js",
     "static/js/2.d2817f5b.chunk.js.map": "/wunderlist2standardnotes/static/js/2.d2817f5b.chunk.js.map",
     "index.html": "/wunderlist2standardnotes/index.html",
-    "precache-manifest.7ff1b376506476f794b2c3ca1e778627.js": "/wunderlist2standardnotes/precache-manifest.7ff1b376506476f794b2c3ca1e778627.js",
+    "precache-manifest.91e94a56c46611e56d9b9ab752f0447a.js": "/wunderlist2standardnotes/precache-manifest.91e94a56c46611e56d9b9ab752f0447a.js",
     "service-worker.js": "/wunderlist2standardnotes/service-worker.js",
     "static/css/main.a1264b33.chunk.css.map": "/wunderlist2standardnotes/static/css/main.a1264b33.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.917c47aa.js",
     "static/js/2.d2817f5b.chunk.js",
     "static/css/main.a1264b33.chunk.css",
-    "static/js/main.467a7ca7.chunk.js"
+    "static/js/main.9685ffb8.chunk.js"
   ]
 }
